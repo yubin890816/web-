@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 先认识BOM[browser object model] 浏览器对象
+    // 在模拟浏览器
+    console.log(window);
+
+    // 函数名+小扩展执行，函数的上下文this即为BOW[内置window对象]
+    function fun(){
+        console.log(this);
+    }
+    fun();
+</script>

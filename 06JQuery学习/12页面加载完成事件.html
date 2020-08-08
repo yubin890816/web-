@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<script>
+    // $(function(){......}) : 页面加载完成后执行一次
+    // 相当于dom中的onload事件
+    $(function () {
+        $("h1").click(function () {
+            $(this).css({ "background": "red" });
+        });
+    })
+</script>
+
+<body>
+    <h1>我是一级标题</h1>
+</body>
+
+</html>

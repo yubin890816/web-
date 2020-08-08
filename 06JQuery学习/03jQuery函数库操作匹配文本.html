@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <p>
+        <input type="text" value="我是一个输入文本的地方">
+    </p>
+
+    <div>我是一个粉刷匠，粉刷本领强</div>
+</body>
+</html>
+<script>
+    // 操作表单元素文本:利用val函数
+    // 获取表单元素文本
+    console.log($("input").val());
+    // 修改表单元素文本
+    $("input").val("我修改了表单元素文本");
+
+    // 操作非表单元素文本:利用html函数
+    // 获取非表单元素文本
+    console.log($("div").html());
+    // 修改非表单元素文本
+    $("div").html("我是祖国的老花骨朵");
+</script>

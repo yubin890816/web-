@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 作用域[scope]，代码的书写范围，JS的代码需要书写在双闭合标签script范围内
+
+    // JS中没有函数重载的概念; 后面定义的会覆盖前者
+    function fun() {
+        console.log("函数一");
+    }
+    function fun(a) {
+        console.log("函数二");
+    }
+    function fun(a, b) {
+        console.log("函数三");
+    }
+    fun("我是帅哥");
+
+    // return关键字: return关键字后面的代码不会再执行;  可以将函数体中计算结果返回,同时可以再函数体外接收
+    function mup(a, b) {
+        return a * b;
+    }
+    var result = mup(9, 10);
+    console.log(result);
+</script>

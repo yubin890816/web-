@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 1、if条件语句的基本使用
+    // if条件语句的条件一般需要的是布尔值,但是其它类型的数据也可以参与（但会隐式转换成布尔值）
+    // 如果if语句只有一行代码,可以省略大括号
+    if(true) alert("大江东去浪淘尽");
+
+    if(false) {
+        alert("当条件为false的时候,代码不执行");
+    }
+
+    if(666) {
+        alert("其它类型的数据会被隐式转换成布尔值");
+    }
+
+    // 2、多分支条件语句
+    var score = prompt("请您输入分数");
+    if(score < 60) {
+        alert("不及格");
+    } else if(score>= 60 && score < 70) {
+        alert("及格");
+    } else if(score >= 70 && score < 80) {
+        alert("良好");
+    } else {
+        alert("优秀");
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            /* 注意：定位元素才有top、left、bottom、right */
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>中国</div>
+</body>
+
+</html>
+<script>
+    $("div").animate({
+        "left": 500,
+        "top": 500,
+        "width": 150,
+        "height": 50
+    }, 5000, function () {
+        $(this).css({
+            "borderRadius": "50%",
+            "textAlign": "center",
+            "lineHeight": "50px"
+        })
+    })
+</script>

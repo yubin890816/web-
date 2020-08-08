@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            border: 1px solid red;
+            top: 100px;
+            left: 30%;
+            /* 如果子元素超出父元素部分 隐藏 */
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            list-style: none;
+            width: 520px;
+            height: 280px;
+        }
+        .leftbtn{
+            position: absolute;
+            left: 0px;
+            top: 120px;
+            width: 50px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            opacity: .7;
+            cursor: pointer;
+        }
+        .rightbtn{
+            position: absolute;
+            right: 0px;
+            top: 120px;
+            width: 50px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            opacity: .7;
+            cursor: pointer;
+        }
+        ol{
+            position: absolute;
+            /* background-color: red; */
+            width: 200px;
+            height: 25px;
+            left: 35%;
+            list-style: none;
+            bottom: 5px;
+        }
+        /* 后代选择器 */
+        ol li{
+            float: left;
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            color: white;
+            border-radius: 12.5px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 5px;
+        }
+        .cur{
+            background-color: skyblue;
+            /* 进行缩放 */
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <!-- 用无序列表去做显示的图片 -->
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="1.jpg" alt=""></li>
+        </ul>
+        <!-- 做显示的按钮 -->
+        <div class="leftbtn">left</div>
+        <div class="rightbtn">right</div>
+        <!-- 用有序列表做分页器 -->
+        <ol>
+            <li class="cur">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>

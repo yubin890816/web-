@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 比较运算符---数字比较
+    console.log(3 > 6); // false
+    console.log(3 >= 6); // false
+    console.log(3 < 6); // true
+    console.log(3 <= 6); // true
+    console.log(3 == 3); // true
+    console.log("3" == 3); // true
+    console.log(3 != 3); // false
+    console.log("3" != 3); // false
+    console.log("3" === 3); // false
+    console.log("3" !== 3); // true
+
+    console.log("=========================================");
+
+    // 比较运算符---其它非数字比较（非字符串类型）
+    console.log(100 > true); // true
+    console.log(true == 1); // true
+    console.log(true === 1); // false
+    console.log(true < false); // false
+    console.log(NaN < 100); // false
+    console.log(undefined > 100); // false
+    console.log(666 > null); // true
+    console.log(NaN == NaN);
+    // 有歧义的地方，毕竟js语言只用10天写出来的
+    console.log(null == 0);
+    console.log(null > 0);
+    console.log(NaN == undefined);
+
+    console.log("=========================================");
+
+    // 比较运算符--字符串比较
+    // 字符串与数字比较:字符串转换成数字进行比较
+    console.log(66 < "99"); // true
+    console.log("33" > 22); // true
+    console.log("=========================================");
+
+    // 字符串与字符串比较:通过ASCII码数值进行比较，两个字符串都是从左到右一个一个字符进行比较，直到某一字符比较出结果，比较结束
+    // 0-9<A-Z<a-z:从左到右依次变大
+    console.log("a2" > "A2"); //true
+    console.log("b2a" > "ABC"); //true
+    console.log("李四" == "李四");//true
+</script>

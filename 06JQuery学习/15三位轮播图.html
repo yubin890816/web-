@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入外部样式 -->
+    <link rel="stylesheet" href="./css/default.css">
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="current"><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+        </ul>
+        <button class="lbtn">&lt;</button>
+        <button class="rbtn">&gt;</button>
+        <ol>
+            <li class="cur">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // 定义一个全局的变量，控制某一个li运动
+    var idx = 0;
+    // 右侧按钮单击事件
+    function rhandle() {
+        // 将当前显示这张图片从left为0位置运动到-600位置
+        $("ul li").eq(idx).css({ "left": 0 }).stop(true).animate({ "left": -600 }, 500);
+        // 全局变量+1
+        idx++;
+        idx = idx > 4 ? 0 : idx;
+        // 下一张图进入
+        $("ul li").eq(idx).css({ "left": 600 }).stop(true).animate({ "left": 0 }, 500);
+
+        // 底下的分页器也跟着变化
+        $("ol li").eq(idx).addClass("cur").siblings().removeClass();
+    }
+    $(".rbtn").click(rhandle);
+
+    // 开启定时器让轮播图自动轮播
+    var timer = setInterval(function () {
+        rhandle();
+    }, 1500);
+
+    // 鼠标移上事件
+    $("div").mouseenter(function () {
+        clearInterval(timer);
+    });
+
+    // 鼠标离开事件
+    $("div").mouseleave(function () {
+        timer = setInterval(rhandle, 1500);
+    });
+
+    // 左侧按钮的单击事件
+    $(".lbtn").click(function () {
+        // 将当前显示这张图片从left为0位置运动到-600位置
+        $("ul li").eq(idx).css({ "left": 0 }).stop(true).animate({ "left": 600 }, 500);
+        // 全局变量+1
+        idx--;
+        idx = idx < 0 ? 4 : idx;
+        // 下一张图进入
+        $("ul li").eq(idx).css({ "left": -600 }).stop(true).animate({ "left": 0 }, 500);
+
+        // 底下的分页器也跟着变化
+        $("ol li").eq(idx).addClass("cur").siblings().removeClass();
+    });
+
+    // 底下分页器的单击事件
+    $("ol li").click(function () {
+        // 获取单击的那个分页器的索引值
+        var index = $(this).index();
+        if (index > idx) {
+            // 将当前显示这张图片从left为0位置运动到-600位置
+            $("ul li").eq(idx).css({ "left": 0 }).stop(true).animate({ "left": -600 }, 500);
+
+            // 单击的那个分页器对应的动画
+            $("ul li").eq(index).css({ "left": 600 }).stop(true).animate({ "left": 0 }, 500);
+            // 全局变量重新赋值
+            idx = index;
+            // 底下的分页器也跟着变化
+            $("ol li").eq(idx).addClass("cur").siblings().removeClass();
+        }
+        if (index < idx) {
+            // 将当前显示这张图片从left为0位置运动到-600位置
+            $("ul li").eq(idx).css({ "left": 0 }).stop(true).animate({ "left": 600 }, 500);
+
+            // 单击的那个分页器对应的动画
+            $("ul li").eq(index).css({ "left": -600 }).stop(true).animate({ "left": 0 }, 500);
+            // 全局变量重新赋值
+            idx = index;
+            // 底下的分页器也跟着变化
+            $("ol li").eq(idx).addClass("cur").siblings().removeClass();
+        }
+
+    });
+</script>

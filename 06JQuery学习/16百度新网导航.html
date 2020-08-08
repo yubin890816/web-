@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* div标签样式 子绝父相 */
+        div.current {
+            position: relative;
+            background-color: #01204f;
+            width: 100%;
+            height: 40px;
+        }
+
+        /* ul标签样式 */
+        ul {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            /* 注意宽度不要写死,用padding去撑 */
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        div.silder {
+            position: absolute;
+            width: 52px;
+            height: 41px;
+            background-color: red;
+            opacity: .8;
+            /*透明度*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="current">
+        <div class="silder"></div>
+        <ul>
+            <li>首页</li>
+            <li>国内</li>
+            <li>国际</li>
+            <li>军事</li>
+            <li>财经</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>互联网</li>
+            <li>科技</li>
+            <li>游戏</li>
+            <li>女人</li>
+            <li>汽车</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    // 给所有li添加鼠标移上事件
+    $("li").mouseenter(function () {
+        // 红色滑块算法（要获取到鼠标进入这个li的前面所有姊妹元宽度之和）
+        var sum = 0
+        $(this).prevAll().each(function () {
+            sum += $(this).innerWidth();
+        });
+
+        // 让红色滑块动起来
+        $("div.silder").stop(true).animate({
+            "left": sum,
+            "width": $(this).innerWidth()
+        }, 200);
+    });
+
+    // 鼠标移除事件
+    $("li").mouseleave(function(){
+        $("div.silder").stop(true).animate({
+            "left": 0,
+            "width": $("ul li").eq(0).innerWidth()
+        }, 200);
+    });
+</script>

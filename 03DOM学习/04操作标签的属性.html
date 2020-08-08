@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/1.jpg" id="box1">
+    <div class="cur" id="ha">我是一个粉刷匠</div>
+</body>
+</html>
+<script>
+    // 通过标签的id属性值获取img标签
+    var img = document.getElementById("box1");
+    // 获取img标签的src属性值
+    console.log(img.getAttribute("src"));
+    console.log(img.src);
+    // 修改img标签的src属性值
+    img.src = "./img/2.jpg";
+
+    var div = document.getElementById("ha");
+    // 获取div标签的class、id属性值
+    console.log(div.className);
+    console.log(div.id);
+    div.id = "haha";
+    div.innerHTML = "我不是粉刷匠";
+</script>

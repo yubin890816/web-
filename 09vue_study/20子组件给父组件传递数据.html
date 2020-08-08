@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #app {
+            width: 80%;
+            height: 400px;
+            background-color: skyblue;
+            margin: 10px auto;
+        }
+
+        .cur {
+            width: 400px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 根组件模板 -->
+    <div id="app">
+        <h1>我是王健林~~~~{{liwu}}</h1>
+        <wsc class="cur" @gift="show($event)"></wsc>
+    </div>
+    <!-- 子组件模板 -->
+    <template id="wsc">
+        <div>
+            <h1>我是王思聪</h1>
+            <button @click="send">单击我给我老子送礼物</button>
+        </div>
+    </template>
+</body>
+
+</html>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            liwu: ""
+        },
+        methods: {
+            show(liwu) {
+                this.liwu = liwu;
+            }
+        },
+        components: {
+            wsc: {
+                template: "#wsc",
+                data() {
+                    // 组件的数据data, 务必是一个函数,函数务必需要有返回值
+                    return {
+                        msg: "熊猫TV"
+                    }
+                },
+                methods: {
+                    // 给父亲传递数据
+                    send() {
+                        // 触发自定义事件,通过组件的$emit方法
+                        this.$emit("gift", this.msg);
+                    }
+                }
+            }
+        }
+    });
+</script>

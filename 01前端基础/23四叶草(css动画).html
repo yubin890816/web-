@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            /* 相对定位: 相对的是自己的起始位置 */
+            position: relative;
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+            left: 40%;
+            /* 调用动画: 动画名称 动画执行时间 。。。 */
+            animation: donghua 5s linear 0s infinite;
+        }
+        .ye1{
+            /* 绝对定位: 参照定位父元素进行偏移 */
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 圆角的设置分别是 左上,右上,右下,左下 */
+            border-radius: 0px 90px 0px 90px;
+        }
+        .ye2{
+            /* 绝对定位: 参照定位父元素进行偏移 */
+            position: absolute;
+            left: 100px;
+            top: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 90px 0px 90px 0px;
+        }
+        .ye3{
+            /* 绝对定位: 参照定位父元素进行偏移 */
+            position: absolute;
+            left: 0px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 90px 0px 90px 0px;
+        }
+        .ye4{
+            /* 绝对定位: 参照定位父元素进行偏移 */
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 0px 90px 0px 90px;
+        }
+        /* 声明一个animation动画 */
+        @-webkit-keyframes donghua{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ye1"></div>
+        <div class="ye2"></div>
+        <div class="ye3"></div>
+        <div class="ye4"></div>
+    </div>
+</body>
+</html>

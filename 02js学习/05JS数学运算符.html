@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 数学运算符---数字参数
+    // 如果是数字和数字进行数学运算，先算乘除、后算加减、如果有小括号先算小括号里面的
+    console.log(10 + 1);
+    console.log(20 - 2);
+    console.log(5 * 2);
+    console.log(6 / 3);
+    console.log(9 % 2);
+
+    console.log("===========================");
+
+    // 数学运算符---布尔参与
+    // 布尔类型数据也可以参与数学运算符，但是系统自动隐式转换为数字参数
+    console.log(Number(true));
+    console.log(Number(false));
+
+    console.log("===========================");
+
+    // 数学运算符---undefined参数
+    // undefined未定义类型数据参与数学运算的时候会隐式转换为数字NaN
+    // NaN其实也是数字类型数值，只不过这个数值比较特殊，一般在计算数学运算符的时候算不出结果的时候返回数字NaN
+    console.log(Number(undefined));
+    console.log(typeof NaN);
+    console.log(NaN + 33);
+
+    console.log("===========================");
+
+    // 数学运算符---null空对象参与
+    // null在参与数学运算的时候会隐式转换成数值0
+    console.log(Number(null));
+
+    console.log("===========================");
+
+    // 数学运算符---字符串参数
+    /*
+        字符串也可以参与数学运算符：但加号比较特殊
+        如果加号遇见字符串称之为连字符：将数据从左到又拼接为字符串
+        如果减、乘、除、取余数字字符串参与：都隐式转换为数字参与
+    */
+    console.log("22" + 44);
+    console.log("22" - 44);
+    console.log("22" * 44);
+    console.log("22" / 44);
+    console.log("22" % 44);
+
+    console.log(Number("22"));
+    console.log(Number("张三"));
+    console.log("张三" - 44);
+    console.log(Number("a"));
+    console.log("a" - 44);
+</script>

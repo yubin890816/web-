@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清空默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            position: relative;
+            width: 50px;
+            height: 100px;
+            background: url(./img/1.png);
+            background-position: 0px -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>
+<script>
+    // 获取标签
+    var div = document.getElementById("box");
+    // 控制背景图定位
+    var x = 0;
+    // 控制标签left变化数值
+    var l = 0;
+    // 控制士兵行走、停止变量
+    var isMove = false;
+    setInterval(function () {
+        if(isMove) return;
+        x++;
+        l += 10;
+        if (x > 3) x = 0;
+        div.style.backgroundPosition = -x * 50 + "px -200px";
+        div.style.left = l + "px";
+    }, 250);
+
+    div.onclick = function(){
+        isMove = !isMove;
+    }
+</script>

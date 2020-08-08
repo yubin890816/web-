@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        我是表单元素: <input type="text" value="默认文本" id="box1"/>
+    </div>
+    <a href="https://www.baidu.com" id="box2">跳转到百度</a>
+</body>
+</html>
+<script>
+    // 如果操作表单元素文本:需要使用标签的value属性
+    var input = document.getElementById("box1");
+    console.log(input.value);
+    input.value = "我是通过JS动态的修改文本内容";
+
+    // 非表单元素:通过innerHTML属性获取标签文本内容
+    var a = document.getElementById("box2");
+    console.log(a.innerHTML);
+    // 动态的修改a标签的文本内容
+    a.innerHTML = "我真帅";
+</script>

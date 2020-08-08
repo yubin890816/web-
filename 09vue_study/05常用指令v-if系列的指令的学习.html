@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>你的性别是什么呀?</h1>
+        <ul>
+            <li v-if="'男'==sex">男</li>
+            <li v-else-if="'女'==sex">女</li>
+            <li v-else>未知</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            sex: "男"
+        }
+    });
+</script>

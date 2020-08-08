@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* 给div标签添加样式 */
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn1">去北京</button>
+    <button class="btn2">去东京</button>
+    <div></div>
+</body>
+
+</html>
+<script>
+    // 第一个按钮的单击事件
+    $(".btn1").click(function () {
+        $("div").stop(true).animate({
+            "left": 1000
+        }, 2000);
+    });
+    // 第二个按钮的单击事件
+    $(".btn2").click(function () {
+        $("div").stop(true).animate({
+            "left": 0
+        }, 2000);
+    });
+</script>

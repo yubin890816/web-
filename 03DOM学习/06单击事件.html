@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #box{
+            width: 600px;
+            height: 200px;
+            background-color: red;
+            font-size: 16px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">1234</div>
+</body>
+</html>
+<script>
+    var div = document.getElementById("box");
+    var fs = 16;
+    div.onclick = function(){
+        fs++;
+        // console.log("我这个函数执行了么!");
+        div.style.fontSize=fs+"px";
+    }
+</script>

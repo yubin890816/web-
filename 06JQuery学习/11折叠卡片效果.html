@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* 注意：写样式从外层开始写 */
+        ul {
+            list-style: none;
+            width: 600px;
+            margin: 0px auto;
+            border: 1px solid black;
+        }
+
+        li {
+            border-bottom: 1px dashed red;
+        }
+
+        h3 {
+            cursor: pointer;
+        }
+
+        p {
+            background-color: black;
+            color: white;
+            display: none;
+        }
+
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <h3>世卫称新冠是百年一遇健康危机 要学会与病毒共存</h3>
+            <p class="open">世卫组织表示，对于新冠肺炎，科学家已经回答了很多疑问，但是仍然有很多未解难题。当前的研究一致显示，世界绝大多数人仍然易感，即便曾经遭受疫情严重打击的地区也不例外。世卫组织强调，虽然新冠疫苗研发正在以创纪录的速度进行，但是仍然要学会与病毒共存，必须充分利用现有工具抗击疫情。
+            </p>
+        </li>
+        <li>
+            <h3>世卫称新冠是百年一遇健康危机 要学会与病毒共存</h3>
+            <p>世卫组织表示，对于新冠肺炎，科学家已经回答了很多疑问，但是仍然有很多未解难题。当前的研究一致显示，世界绝大多数人仍然易感，即便曾经遭受疫情严重打击的地区也不例外。世卫组织强调，虽然新冠疫苗研发正在以创纪录的速度进行，但是仍然要学会与病毒共存，必须充分利用现有工具抗击疫情。
+            </p>
+        </li>
+        <li>
+            <h3>世卫称新冠是百年一遇健康危机 要学会与病毒共存</h3>
+            <p>世卫组织表示，对于新冠肺炎，科学家已经回答了很多疑问，但是仍然有很多未解难题。当前的研究一致显示，世界绝大多数人仍然易感，即便曾经遭受疫情严重打击的地区也不例外。世卫组织强调，虽然新冠疫苗研发正在以创纪录的速度进行，但是仍然要学会与病毒共存，必须充分利用现有工具抗击疫情。
+            </p>
+        </li>
+        <li>
+            <h3>世卫称新冠是百年一遇健康危机 要学会与病毒共存</h3>
+            <p>世卫组织表示，对于新冠肺炎，科学家已经回答了很多疑问，但是仍然有很多未解难题。当前的研究一致显示，世界绝大多数人仍然易感，即便曾经遭受疫情严重打击的地区也不例外。世卫组织强调，虽然新冠疫苗研发正在以创纪录的速度进行，但是仍然要学会与病毒共存，必须充分利用现有工具抗击疫情。
+            </p>
+        </li>
+    </ul>
+</body>
+
+</html>
+<script>
+    // 给h3标签添加单击事件
+    $("h3").click(function(){
+        $(this).siblings().slideDown(1000).parent().siblings().children("p").slideUp(1000);
+    });
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>生命周期函数------{{count}}</h1>
+        <button @click="add">单击我加上1</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var vm = new Vue({
+        // 挂载点
+        el: "#app",
+        // 数据
+        data: {
+            msg: "我是vm属性值",
+            count: 0
+        },
+        // 事件处理函数
+        methods: {
+            add() {
+                this.count++;
+            }
+        },
+        // 监听属性的地方
+        watch: {},
+        // 生命周期函数
+        beforeCreate() {
+            // 在创建实例之前执行一次,这里访问不到实例data数据
+            console.log("创建vm之前执行一次");
+            console.log(this.msg);
+        },
+        created() {
+            // 在实例创建完毕以后立即执行一次
+            console.log("在创建vm之后立即执行一次");
+            console.log(this.msg);
+        },
+        beforeMount() {
+            // 在实例创建完毕且和模板关联之前执行一次
+            console.log("我是vm即将和模板进行关联");
+        },
+        mounted() {
+            // 实际工作当中经常从这个生命周期函数拉取服务器数据
+            console.log("我是vm，我已经和模板关联完毕");
+        },
+        beforeUpdate() {
+            console.log("当数据发生变化的时候立即执行一次");
+            if (this.count > 3) this.count = 0;
+        },
+        updated() {
+            console.log("当数据发生变化以后立即执行一次");
+            if (this.count % 2 == 0) this.count = 3;
+        }
+    });
+</script>

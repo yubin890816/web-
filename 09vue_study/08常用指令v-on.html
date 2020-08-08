@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>我是计数器小案例:{{count}}</h1>
+        <button v-on:click="add">单击我+1</button>
+        <button @click="minus">单击我-1</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            count: 1
+        },
+        methods: {
+            add() {
+                this.count++;
+            },
+            minus() {
+                this.count--;
+            }
+        }
+    });
+</script>

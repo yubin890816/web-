@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <yb></yb>
+        <jch></jch>
+        <say-call></say-call>
+        <go></go>
+    </div>
+
+    <template id="go">
+        <div>
+            <a href="http: //www.sina.com">新浪</a>
+        </div>
+    </template>
+</body>
+<template id="erha">
+    <p @click="add">{{msg}}</p>
+</template>
+<template id="sayCall">
+    <h1>我是么么哒</h1>
+</template>
+
+
+</html>
+<script>
+    /*
+        全局组件
+        全局组件可以在任意地方使用
+        需要通过Vue构造函数的component属性进行创建
+    */
+    Vue.component("go", {
+        template: "#go"
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {},
+        methods: {},
+        watch: {},
+        components: {
+            // 组件名称
+            jch: {
+                // jch组件模板
+                template: "#erha",
+                // jch组件数据
+                data() {
+                    return {
+                        msg: 1
+                    }
+                },
+                // jch组件事件处理函数
+                methods: {
+                    add() {
+                        this.msg++;
+                    }
+                }
+            },
+            yb: {
+                template: "<ul><li>帅哥</li></ul>"
+            },
+            sayCall: {
+                template: "#sayCall"
+            }
+        }
+    });
+
+    // Vue当中组件分为两种: 局部组件、全局组件
+    /*
+        局部组件
+        局部组件务必需要在components里面进行注册
+        使用的使用当作一个自定义标签即可
+        组件的名字不能瞎写，不能是以后标签名字
+    */
+
+</script>

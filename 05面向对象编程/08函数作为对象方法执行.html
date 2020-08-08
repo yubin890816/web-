@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 函数作为对象方法执行，谁最后打点，上下文即为谁
+    var obj = {
+        name:"小明",
+        eat:function(){
+            console.log(this);
+        },
+        sleep:{
+            inner:function(){
+                console.log(this);
+            }
+        }
+    }
+
+    obj.eat();
+    obj.sleep.inner();
+</script>
