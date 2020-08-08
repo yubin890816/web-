@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入jQuery函数库,前端人员称之为引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>打豆豆</li>
+    </ul>
+
+    <div id="box">我爱你祖国</div>
+
+    <p class="cur">我是祖国的老花骨朵</p>
+</body>
+</html>
+<script>
+    // jQuery函数经常用来操作节点树上的标签
+    // 支持我们曾经学过的选择器：标签选择器、ID选择器、类选择器
+    // 注意：当程序中引入jQuery，这个函数库对外暴露了一个$函数
+    // console.log($);
+    // 它是jQuery函数库一个核心函数，经常用来匹配标签
+    // 标签选择器
+    console.log($("li"));
+    // ID选择器
+    console.log($("#box"));
+    // 类选择器
+    console.log($(".cur"));
+
+    // 如果向设置标签的行内样式可以连续打点css函数
+    $(".cur").css({
+        "color":"red",
+        "fontSize":30,
+        "background":"cyan",
+        "textAlign":"center"
+    });
+    // 老版本写jQuery
+    // jQuery(".cur").css({
+    //     "color":"red",
+    //     "fontSize":30
+    // });
+</script>

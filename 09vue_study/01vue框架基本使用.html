@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>我是Vue,我今年{{age}}岁</p>
+    </div>
+</body>
+
+</html>
+<script>
+    // 当程序中引入vue框架的时候，这个框架对外暴露一个Vue构造函数
+    // 通过Vue构造函数可以创建Vue实例
+    var vue = new Vue({
+        // element:挂载点的设置（将Vue实例和结构层中标签进行挂载）
+        el: "#app", // 右侧放的是选择器
+        // 实例数据来源
+        data: {
+            age: 18
+        }
+    });
+    console.log(vue);
+    // 修改实例属性值
+    vue.age = 100;
+</script>

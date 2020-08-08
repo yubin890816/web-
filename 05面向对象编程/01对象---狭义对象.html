@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 狭义对象：使用大花括号表示
+    var obj = {
+        name: "小明",
+        age: 18,
+        sex: "男",
+        eat: function () {
+            console.log("我可以吃八斤米饭");
+        }
+    }
+    console.log(typeof obj);
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.sex);
+    obj.eat();
+
+    // 修改对象属性值
+    obj.name="二哈";
+    console.log(obj);
+
+    // 动态添加属性
+    obj.color = "白加黑";
+    // 动态添加方法
+    obj.yaoren = function(){
+        console.log("二哈咬人了");
+    }
+    console.log(obj);
+</script>

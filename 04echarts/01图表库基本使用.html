@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 ECharts:引入别人写好的js包 -->
+    <script src="./js/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM(显示图表的地方) -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+</body>
+</html>
+<script type="text/javascript">
+    // 当引入echarts函数的时候，它对外暴露一个对象通过init方法创建实例
+    // 基于准备好的dom，初始化echarts实例
+    console.log(echarts);
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: { // 标题
+            text: '军火出售示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['全国销量']
+        },
+        xAxis: {
+            data: ["飞机","坦克","航母","大炮","护卫舰","手枪"]
+        },
+        yAxis: {},
+        series: [{
+            name: '全国销量',
+            type: 'bar',
+            data: [50, 20, 36, 10, 10, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
