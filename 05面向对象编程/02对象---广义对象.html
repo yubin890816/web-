@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 广义对象--函数
+    function People() {
+
+    }
+    console.log(typeof People);
+    // 函数即为广义对象：因为有一些系统内置属性、方法提供给我们使用
+    // name：系统提供内置属性：可以获取函数名字
+    console.log(People.name);
+    // length：系统提供内置属性：可以获取函数形参个数
+    console.log(People.length);
+
+    // 动态添加自定义属性
+    People.xiaoming = "我是小明";
+    People.age = 18;
+    People.sex = "男";
+    console.log(People.xiaoming);
+
+    // --------------------------------------------------------------
+    // 广义对象--数组
+    var arr = ["吃饭", "睡觉", "打豆豆"];
+    console.log(typeof arr);
+    console.log(arr.length);
+    console.log(arr.reverse());
+
+    // 动态的添加属性、方法
+    arr.xiaohong = "小红";
+    arr.age = 18;
+    console.log(arr.xiaohong);
+</script>

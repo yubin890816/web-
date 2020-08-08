@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引包 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div>我是中国人</div>
+    <div>我是巴基斯坦人</div>
+    <div>我是泰国人</div>
+    <div>我是日本人</div>
+    <div>我是中国人</div>
+    <div>我是巴基斯坦人</div>
+    <div>我是泰国人</div>
+    <div>我是日本人</div>
+    <div>我是中国人</div>
+    <div>我是巴基斯坦人</div>
+    <div>我是泰国人</div>
+    <div>我是日本人</div>
+</body>
+</html>
+<script>
+    // :first 可以获取某一个匹配标签的第一个元素
+    // $("div:first").css({"background":"red"});
+
+    // :last 可以获取某一个匹配标签的最后一个元素
+    // $("div:last").css({"background":"cyan"});
+
+    // :even 偶数选择器
+    // $("div:even").css({"background":"skyblue"});
+
+    // :odd 基数选择器
+    // $("div:odd").css({"background":"pink"});
+
+    // :gt(index) 大于选择器
+    $("div:gt(6)").css({"background":"red"});
+
+    // :lt(index) 小于选择器
+    $("div:lt(6)").css({"background":"yellow"});
+</script>
